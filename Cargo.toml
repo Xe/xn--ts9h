@@ -1,0 +1,12 @@
+[package]
+name = "xn--ts9h"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+libc = "0.2"
+subprocess = "0.2"
+syslog = "6"
