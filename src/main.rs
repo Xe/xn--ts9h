@@ -1,9 +1,9 @@
 #![allow(non_snake_case)]
 
-use std::{env, os::unix::process::CommandExt, process::Command};
+use std::{env, io, os::unix::process::CommandExt, process::Command};
 use syslog::{unix, Facility::LOG_AUTH, Formatter3164};
 
-fn main() -> anyhow::Result<()> {
+fn main() -> io::Result<()> {
     if env::args().len() == 1 {
         eprintln!("usage: {} <command> [args]", env::args().nth(0).unwrap());
         return Ok(());
