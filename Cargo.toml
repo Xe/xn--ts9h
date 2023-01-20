@@ -1,6 +1,6 @@
 [package]
 name = "xn--ts9h"
-description = "A simpler sudo command"
+description = "A simpler sudo command, named xn--ts9h because I can't use an emoji in the package name"
 license = "MIT"
 authors = [ "Xe Iaso <me@xeiaso.net>" ]
 version = "0.1.0"
@@ -9,8 +9,8 @@ edition = "2021"
 [package.metadata.deb]
 assets = [
   ["target/release/xn--ts9h", "usr/bin/🥺", "6755"],
-  ["README.md", "usr/share/doc/xn--ts9h/README", "644"],
-  ["LICENSE", "usr/share/doc/xn--ts9h/LICENSE", "644"],
+  ["README.md", "usr/share/doc/🥺/README", "644"],
+  ["LICENSE", "usr/share/doc/🥺/LICENSE", "644"],
   ["🥺.8", "usr/share/man/man8/🥺.8", "644"],
 ]
 
