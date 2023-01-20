@@ -18,3 +18,8 @@ assets = [
 
 [dependencies]
 syslog = "6"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
