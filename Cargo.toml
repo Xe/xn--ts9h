@@ -1,7 +1,15 @@
 [package]
 name = "xn--ts9h"
+description = "A simpler sudo command"
+license = "MIT"
+authors = [ "Xe Iaso <me@xeiaso.net>" ]
 version = "0.1.0"
 edition = "2021"
+
+[package.metadata.deb]
+assets = [
+  ["target/release/xn--ts9h", "usr/bin/🥺", "6755"],
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
