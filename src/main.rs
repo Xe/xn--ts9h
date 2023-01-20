@@ -10,6 +10,7 @@ fn main() -> io::Result<()> {
     }
 
     let program = env::args().nth(1).unwrap();
+    let args = env::args().skip(2).collect::<Vec<String>>();
     let mut writer = unix(Formatter3164 {
         facility: LOG_AUTH,
         hostname: None,
@@ -17,12 +18,9 @@ fn main() -> io::Result<()> {
         pid: 0,
     })
     .unwrap();
-    writer.err(format!("running {program}")).unwrap();
+    writer
+        .err(format!("running {:?} {:?}", program, args))
+        .unwrap();
 
-    Err(Command::new(program)
-        .args(env::args().skip(2).collect::<Vec<String>>())
-        .uid(0)
-        .gid(0)
-        .exec()
-        .into())
+    Err(Command::new(program).args(args).uid(0).gid(0).exec().into())
 }
