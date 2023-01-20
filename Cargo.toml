@@ -18,6 +18,4 @@ assets = [
 
 [dependencies]
 anyhow = "1"
-libc = "0.2"
-subprocess = "0.2"
 syslog = "6"
