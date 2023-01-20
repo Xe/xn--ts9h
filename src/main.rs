@@ -14,7 +14,7 @@ fn main() -> io::Result<()> {
     let mut writer = unix(Formatter3164 {
         facility: LOG_AUTH,
         hostname: None,
-        process: "xn--ts9h".into(),
+        process: "🥺".into(),
         pid: 0,
     })
     .unwrap();
