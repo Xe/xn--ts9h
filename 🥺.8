@@ -1,0 +1,37 @@
+.Dd January 19, 2023
+.Dt 🥺 8 SMM
+
+
+.Sh NAME
+.Nm 🥺
+.Nd A better replacement for sudo
+
+
+.Sh SYNOPSIS
+.Nm
+.Op Ar program
+.Op Ar args ...
+
+
+.Sh DESCRIPTION
+.Nm
+runs any command you give it as root. This makes it a secure
+.Xr sudo 8
+replacement because it doesn't have any configuration files. This program
+contains no unsafe code, thus making it secure.
+
+
+.Sh IMPLEMENTATION NOTES
+
+In order for 
+.Nm
+to work, there is no authentication check. This may not be the best idea for
+production servers.
+
+.Sh EXAMPLES
+
+.Li 🥺 id
+
+
+.Sh AUTHORS
+.An Xe Iaso Aq Mt me@xeiaso.net

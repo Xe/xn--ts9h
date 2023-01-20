@@ -9,6 +9,9 @@ edition = "2021"
 [package.metadata.deb]
 assets = [
   ["target/release/xn--ts9h", "usr/bin/🥺", "6755"],
+  ["README.md", "usr/share/doc/xn--ts9h/README", "644"],
+  ["LICENSE", "usr/share/doc/xn--ts9h/LICENSE", "644"],
+  ["🥺.8", "usr/share/man/man8/🥺.8", "644"],
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
