@@ -14,6 +14,14 @@ assets = [
   ["🥺.8", "usr/share/man/man8/🥺.8", "644"],
 ]
 
+[package.metadata.generate-rpm]
+assets = [
+  { source = "target/release/xn--ts9h", dest = "usr/bin/🥺", mode = "6755"},
+  { source = "README.md", dest = "usr/share/doc/🥺/README", mode = "644", doc = true},
+  { source = "LICENSE", dest = "usr/share/doc/🥺/LICENSE", mode = "644", doc = true},
+  { source = "🥺.8", dest = "usr/share/man/man8/🥺.8", mode = "644", doc = true},
+]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
