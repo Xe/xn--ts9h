@@ -4,7 +4,12 @@ use std::{env, ffi::OsString, io, os::unix::process::CommandExt, process::Comman
 use syslog::{unix, Facility::LOG_AUTH, Formatter3164};
 
 fn main() -> io::Result<()> {
-    if env::args_os().nth(0).unwrap() != "🥺" {
+    let progName = std::env::current_exe()
+        .ok()
+        .and_then(|pb| pb.file_name().map(|s| s.to_os_string()))
+        .and_then(|s| s.into_string().ok());
+
+    if progName.unwrap() != "🥺" {
         eprintln!(
             "error: called 🥺 with name {:?}",
             env::args_os().nth(0).unwrap()
