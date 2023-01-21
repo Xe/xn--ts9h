@@ -1,6 +1,6 @@
 .direnv
-.result
-.result-*
+result
+result-*
 
 
 # Added by cargo
