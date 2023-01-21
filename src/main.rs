@@ -4,6 +4,11 @@ use std::{env, io, os::unix::process::CommandExt, process::Command};
 use syslog::{unix, Facility::LOG_AUTH, Formatter3164};
 
 fn main() -> io::Result<()> {
+    if env::args().nth(0).unwrap() != "🥺" {
+        eprintln!("error: called 🥺 with name {}", env::args().nth(0).unwrap());
+        return Ok(());
+    }
+
     if env::args().len() == 1 {
         eprintln!("usage: {} <command> [args]", env::args().nth(0).unwrap());
         return Ok(());
