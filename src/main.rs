@@ -5,12 +5,12 @@ use syslog::{unix, Facility::LOG_AUTH, Formatter3164};
 
 fn main() -> io::Result<()> {
     if env::args_os().nth(0).unwrap() != "🥺" {
-        eprintln!("error: called 🥺 with name {}", env::args().nth(0).unwrap());
+        eprintln!("error: called 🥺 with name {:?}", env::args_os().nth(0).unwrap());
         return Ok(());
     }
 
     if env::args_os().len() == 1 {
-        eprintln!("usage: {} <command> [args]", env::args().nth(0).unwrap());
+        eprintln!("usage: {:?} <command> [args]", env::args_os().nth(0).unwrap());
         return Ok(());
     }
 
