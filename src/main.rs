@@ -1,16 +1,22 @@
 #![allow(non_snake_case)]
 
-use std::{env, io, os::unix::process::CommandExt, process::Command, ffi::OsString};
+use std::{env, ffi::OsString, io, os::unix::process::CommandExt, process::Command};
 use syslog::{unix, Facility::LOG_AUTH, Formatter3164};
 
 fn main() -> io::Result<()> {
     if env::args_os().nth(0).unwrap() != "🥺" {
-        eprintln!("error: called 🥺 with name {:?}", env::args_os().nth(0).unwrap());
+        eprintln!(
+            "error: called 🥺 with name {:?}",
+            env::args_os().nth(0).unwrap()
+        );
         return Ok(());
     }
 
-    if env::args_os().len() == 1 {
-        eprintln!("usage: {:?} <command> [args]", env::args_os().nth(0).unwrap());
+    if env::args_os().len() == 1 || env::args_os().len() == 0 {
+        eprintln!(
+            "usage: {:?} <command> [args]",
+            env::args_os().nth(0).unwrap()
+        );
         return Ok(());
     }
 

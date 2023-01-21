@@ -17,7 +17,7 @@
         packages = rec {
           bin = pkgs.rustPlatform.buildRustPackage {
             pname = "xn--ts9h";
-            version = "0.1.1";
+            version = "0.1.2";
 
             inherit src;
 

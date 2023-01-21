@@ -3,7 +3,7 @@ name = "xn--ts9h"
 description = "A simpler sudo command, named xn--ts9h because I can't use an emoji in the package name"
 license = "MIT"
 authors = [ "Xe Iaso <me@xeiaso.net>" ]
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 [package.metadata.deb]
