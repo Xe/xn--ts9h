@@ -25,6 +25,7 @@ assets = [
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = { version = "4.1.1", features = ["derive"] }
 syslog = "6"
 
 [profile.release]

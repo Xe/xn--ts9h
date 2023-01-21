@@ -1,7 +1,17 @@
 #![allow(non_snake_case)]
-
+use clap::Parser;
 use std::{env, io, os::unix::process::CommandExt, process::Command};
 use syslog::{unix, Facility::LOG_AUTH, Formatter3164};
+
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None)]
+struct Args {
+    /// The program to run as root
+    program: String,
+    /// The program arguments
+    #[clap(default_value = "")]
+    args: String
+ }
 
 fn main() -> io::Result<()> {
     if env::args().nth(0).unwrap() != "🥺" {
@@ -9,13 +19,10 @@ fn main() -> io::Result<()> {
         return Ok(());
     }
 
-    if env::args().len() == 1 {
-        eprintln!("usage: {} <command> [args]", env::args().nth(0).unwrap());
-        return Ok(());
-    }
+    let args = Args::parse();
+    let program = args.program;
+    let programArgs = args.args;
 
-    let program = env::args().nth(1).unwrap();
-    let args = env::args().skip(2).collect::<Vec<String>>();
     let mut writer = unix(Formatter3164 {
         facility: LOG_AUTH,
         hostname: None,
@@ -23,9 +30,10 @@ fn main() -> io::Result<()> {
         pid: 0,
     })
     .unwrap();
+
     writer
-        .err(format!("running {:?} {:?}", program, args))
+        .err(format!("running {:?} {:?}", program, programArgs))
         .unwrap();
 
-    Err(Command::new(program).args(args).uid(0).gid(0).exec().into())
+    Err(Command::new(program).arg(programArgs).uid(0).gid(0).exec().into())
 }
