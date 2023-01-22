@@ -22,7 +22,7 @@
             inherit src;
 
             #cargoHash = pkgs.lib.fakeHash;
-            cargoHash = "sha256-8zSGboy+awtcMj4Zojdv8giEnCiu5nyRxJLfr7ISS7I=";
+            cargoHash = "sha256-wuM68jb96b3YETQeWTU4/4NE3bIsP1pawSOudGrsjrQ=";
           };
 
           default = pkgs.runCommand "xn--ts9h-files" { } ''
